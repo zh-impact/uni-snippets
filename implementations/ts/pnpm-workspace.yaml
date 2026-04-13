@@ -1,2 +1,5 @@
 packages:
   - features/*
+
+allowBuilds:
+  esbuild: true
