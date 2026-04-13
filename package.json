@@ -1,14 +1,14 @@
 {
   "name": "uni-snippets",
   "version": "0.1.0",
-  "description": "Universal snippets for exploring and learning.",
+  "description": "Unified snippets for exploring and learning.",
   "author": "zh-impact",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@biomejs/biome": "2.4.11"
-  }
+  },
+  "packageManager": "npm@11.12.1"
 }
