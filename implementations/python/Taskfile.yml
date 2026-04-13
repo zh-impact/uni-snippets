@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  init:
+    cmds:
+      - uv --version
+      - uv venv
+      - echo "Python (uv) environment initialized successfully!"
+
+  extract:pdf:
+    dir: ./pdf_extract
+    cmds:
+      - uv run main.py {{.INPUT}} > {{.OUTPUT}}/python_output.txt

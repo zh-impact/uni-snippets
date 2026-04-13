@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  init:
+    cmds:
+      - pnpm --version
+      - echo "TypeScript workspace initialized successfully!"
+
+  # Define the PDF extraction task for TypeScript implementation
+  extract:pdf:
+    dir: ./features/pdf_extract
+    cmds:
+      - pnpm run start {{.INPUT}} > {{.OUTPUT}}/ts_output.txt

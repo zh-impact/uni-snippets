@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  init:
+    cmds:
+      - cargo --version
+      - echo "Rust 环境就绪"
+
+  # Define the PDF extraction task for Rust implementation
+  extract:pdf:
+    dir: ./pdf_extract
+    cmds:
+      - cargo run -q -- {{.INPUT}} > {{.OUTPUT}}/rust_output.txt

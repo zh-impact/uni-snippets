@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  init:
+    cmds:
+      - go version
+      - "[ -f go.work ] || go work init"
+      - echo "Go workspace initialized successfully!"
+
+  extract:pdf:
+    dir: ./pdf_extract
+    cmds:
+      - go run main.go {{.INPUT}} > {{.OUTPUT}}/go_output.txt

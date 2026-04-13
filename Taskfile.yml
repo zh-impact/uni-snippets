@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+# silent: true
+
+vars:
+  GREETING: Hello, world!
+
+includes:
+  go:
+    taskfile: ./implementations/go/Taskfile.yml
+    dir: ./implementations/go
+  py:
+    taskfile: ./implementations/python/Taskfile.yml
+    dir: ./implementations/python
+  rs:
+    taskfile: ./implementations/rust/Taskfile.yml
+    dir: ./implementations/rust
+  ts:
+    taskfile: ./implementations/ts/Taskfile.yml
+    dir: ./implementations/ts
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  init:
+    desc: "Initialize the workspace of all implementations"
+    cmds:
+      - task: go:init
+      - task: py:init
+      - task: rs:init
+      - task: ts:init
+      - echo "All implementations have been initialized!"
+
+  pdf:extract:
+    desc: "Compare the PDF extraction feature across all implementations"
+    summary: |
+      Run the PDF extraction comparison tasks for Go, Python, Rust, and TypeScript implementations.
+      The test data is located in './assets/input/bitcoin.pdf'.
+      Each implementation will extract text from the PDF and save the output in './assets/output/'.
+    vars:
+      PROJECT_ROOT: '{{.TASKFILE_DIR}}'
+      TEST_FILE: '{{.PROJECT_ROOT}}/assets/input/bitcoin.pdf'
+      OUTPUT_DIR: '{{.PROJECT_ROOT}}/assets/output'
+    silent: true
+    cmds:
+      - echo "--- Run Go implementation ---"
+      - task: go:extract:pdf
+        vars: { INPUT: "{{.TEST_FILE}}", OUTPUT: "{{.OUTPUT_DIR}}" }
+      - echo "--- Run Python implementation ---"
+      - task: py:extract:pdf
+        vars: { INPUT: "{{.TEST_FILE}}", OUTPUT: "{{.OUTPUT_DIR}}" }
+      - echo "--- Run Rust implementation ---"
+      - task: rs:extract:pdf
+        vars: { INPUT: "{{.TEST_FILE}}", OUTPUT: "{{.OUTPUT_DIR}}" }
+      - echo "--- Run TypeScript implementation ---"
+      - task: ts:extract:pdf
+        vars: { INPUT: "{{.TEST_FILE}}", OUTPUT: "{{.OUTPUT_DIR}}" }
+      - echo "PDF extraction comparison completed for all implementations!"
