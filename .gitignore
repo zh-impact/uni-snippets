@@ -1,0 +1,22 @@
+# Operating System
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Programming Language
+node_modules/
+
+# Framework
+dist/
+
+# Assets
+assets/input
+assets/output
+
+# Logs
+*.log
+
+# Credentials
+.env
