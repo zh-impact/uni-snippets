@@ -1,6 +1,8 @@
 [package]
-name = "pdf_extract"
+name = "pdf_extract_cli"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+clap = { version = "4.6.0", features = ["derive"] }
+pdf-extract = "0.10.0"
