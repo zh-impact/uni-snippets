@@ -1,13 +1,9 @@
 [project]
-name = "python-implementation"
+name = "openai-compatible-test"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
-
-[tool.uv.workspace]
-members = [
-    "pdf_extract",
-    "features/*",
+dependencies = [
+    "openai>=2.32.0",
 ]
