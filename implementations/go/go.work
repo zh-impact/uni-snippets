@@ -1,3 +1,6 @@
 go 1.25.0
 
-use ./pdf_extract
+use (
+	./curl_impersonate
+	./pdf_extract
+)
