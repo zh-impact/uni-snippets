@@ -3,7 +3,11 @@ module snippet.o3o.ooo/curl_impersonate
 go 1.25.0
 
 require (
-	codeberg.org/readeck/go-readability/v2 v2.1.1 // indirect
+	codeberg.org/readeck/go-readability/v2 v2.1.1
+	github.com/enetx/surf v1.0.198
+)
+
+require (
 	github.com/andybalholm/brotli v1.2.1 // indirect
 	github.com/andybalholm/cascadia v1.3.3 // indirect
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de // indirect
@@ -12,7 +16,6 @@ require (
 	github.com/enetx/http2 v1.0.26 // indirect
 	github.com/enetx/http3 v1.0.7 // indirect
 	github.com/enetx/iter v0.0.0-20250912135656-f1583323588f // indirect
-	github.com/enetx/surf v1.0.198 // indirect
 	github.com/go-shiori/dom v0.0.0-20230515143342-73569d674e1c // indirect
 	github.com/gogs/chardet v0.0.0-20211120154057-b7413eaefb8f // indirect
 	github.com/klauspost/compress v1.18.5 // indirect
